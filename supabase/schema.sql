@@ -37,11 +37,16 @@ create table if not exists content_generations (
 
 create table if not exists demo_orders (
   id uuid primary key default gen_random_uuid(),
-  producto text not null,
-  cantidad int default 1,
-  nombre_cliente text,
-  whatsapp_cliente text,
-  notas text,
+  package_id text not null,
+  package_name text not null,
+  amount integer not null,
+  currency text default 'mxn',
+  customer_name text,
+  business_name text,
+  whatsapp text,
+  email text,
+  status text default 'simulated',
+  stripe_session_id text,
   created_at timestamp with time zone default now()
 );
 

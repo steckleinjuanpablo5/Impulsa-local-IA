@@ -6,7 +6,27 @@ import { ChevronDown } from 'lucide-react'
 const faqs = [
   {
     q: '¿El precio es mensual?',
-    a: 'No. Los precios mostrados son por implementación inicial, un solo pago. Servicios externos como dominio, hosting, pasarela de pago o herramientas de IA real pueden cotizarse aparte si el negocio los requiere.',
+    a: 'No. Los paquetes son de pago único por implementación inicial. Servicios externos como dominio, hosting, pasarela de pago o herramientas de IA real pueden cotizarse aparte si el negocio los requiere.',
+  },
+  {
+    q: '¿El pago en línea ya funciona?',
+    a: 'En esta versión el flujo de compra es una simulación. La integración real con Stripe o Mercado Pago puede activarse en una siguiente etapa cuando el proyecto salga de modo demo.',
+  },
+  {
+    q: '¿Qué pasa después de comprar?',
+    a: 'Se recopila la información del negocio —logotipo, servicios, horarios y datos de contacto— y se inicia el proceso de implementación del paquete seleccionado.',
+  },
+  {
+    q: '¿Puedo pedir factura?',
+    a: 'Sí, puede considerarse como parte del proceso comercial real. Para el demo académico solo se muestra el flujo de compra simulado.',
+  },
+  {
+    q: '¿El precio incluye dominio y hosting?',
+    a: 'Dominio, hosting, correo empresarial, WhatsApp API, pasarela de pago o herramientas externas pueden cotizarse aparte según las necesidades de cada negocio.',
+  },
+  {
+    q: '¿Puedo agregar una pasarela de pago real después?',
+    a: 'Sí. La estructura está preparada para conectar Stripe o Mercado Pago en producción. Solo se requieren las claves de producción y un proceso de activación comercial.',
   },
   {
     q: '¿Qué necesito para empezar?',

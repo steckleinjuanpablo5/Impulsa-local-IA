@@ -1,8 +1,5 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
-import { Check, Clock, ArrowRight, X, Zap, ChevronLeft } from 'lucide-react'
+import { Check, Clock, ArrowRight, Zap, ChevronLeft } from 'lucide-react'
 
 export interface PackageData {
   name: string
@@ -18,8 +15,6 @@ export interface PackageData {
 }
 
 export default function PackagePage({ pkg }: { pkg: PackageData }) {
-  const [showModal, setShowModal] = useState(false)
-
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Nav */}
@@ -113,13 +108,13 @@ export default function PackagePage({ pkg }: { pkg: PackageData }) {
                 {pkg.delivery}
               </div>
 
-              <button
-                onClick={() => setShowModal(true)}
-                className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors flex items-center justify-center gap-2 mb-3"
+              <Link
+                href={`/checkout/${pkg.slug}`}
+                className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors flex items-center justify-center gap-2 mb-3 text-sm text-center"
               >
                 Comprar paquete
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </Link>
 
               <a
                 href={`/?paquete=${pkg.slug}#contacto`}
@@ -143,41 +138,6 @@ export default function PackagePage({ pkg }: { pkg: PackageData }) {
         </div>
       </div>
 
-      {/* Modal */}
-      {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-bold text-slate-900">Simulación de compra</h3>
-              <button onClick={() => setShowModal(false)} className="p-1.5 hover:bg-slate-100 rounded-lg">
-                <X className="w-5 h-5 text-slate-500" />
-              </button>
-            </div>
-            <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-4">
-              <p className="text-blue-800 text-sm">
-                Esta es una simulación de compra. La pasarela de pago se integrará en una siguiente etapa.
-              </p>
-            </div>
-            <p className="text-slate-500 text-sm mb-6">
-              Por ahora puedes solicitar asesoría y te contactaremos para preparar la implementación de tu paquete.
-            </p>
-            <div className="flex gap-3">
-              <a
-                href={`/?paquete=${pkg.slug}#contacto`}
-                className="flex-1 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-center text-sm transition-colors"
-              >
-                Solicitar asesoría
-              </a>
-              <button
-                onClick={() => setShowModal(false)}
-                className="px-4 py-3 border border-slate-200 text-slate-600 rounded-xl text-sm hover:bg-slate-50 transition-colors"
-              >
-                Cerrar
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
