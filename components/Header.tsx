@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
@@ -21,11 +21,25 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#inicio" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
-              <Zap className="w-4 h-4 text-white" />
-            </div>
+            <svg
+              viewBox="0 0 88 88"
+              className="w-9 h-9 group-hover:scale-105 transition-transform"
+              role="img"
+              aria-label="Impulsa Local IA"
+            >
+              <defs>
+                <linearGradient id="logoAtardecer" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0" stopColor="#8b5cf6" />
+                  <stop offset="0.5" stopColor="#ec4899" />
+                  <stop offset="1" stopColor="#f97316" />
+                </linearGradient>
+              </defs>
+              <rect x="4" y="4" width="80" height="80" rx="22" fill="url(#logoAtardecer)" />
+              <path d="M26 54 L44 30 L62 54" fill="none" stroke="#fff" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M26 66 L44 44 L62 66" fill="none" stroke="#fff" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" />
+            </svg>
             <span className="font-bold text-slate-900 text-lg">
-              Impulsa<span className="text-blue-600"> Local IA</span>
+              Impulsa<span className="bg-gradient-to-r from-violet-500 via-pink-500 to-orange-500 bg-clip-text text-transparent"> Local IA</span>
             </span>
           </a>
 

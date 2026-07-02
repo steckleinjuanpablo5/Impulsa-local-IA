@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" width="88" height="88" role="img" aria-label="Impulsa Local IA">
+  <defs>
+    <linearGradient id="favAtardecer" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="0.5" stop-color="#ec4899"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="88" height="88" rx="22" fill="url(#favAtardecer)"/>
+  <path d="M24 55 L44 28 L64 55" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 68 L44 41 L64 68" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+</svg>
